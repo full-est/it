@@ -18,7 +18,6 @@ public class Main {
         tablet1.connect();
         tablet1.draw();
 
-        // Вывод количества созданных объектов
         System.out.println("Total devices: " + Devices.getObjectCount());
     }
 }
