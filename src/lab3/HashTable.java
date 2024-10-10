@@ -40,6 +40,7 @@ public class HashTable<K, V> {
 
     public void put(K key, V value) {
         int index = hash(key);
+        index = Math.abs(index);
         if (table[index] == null) {
             table[index] = new LinkedList<>();
         }
@@ -57,6 +58,7 @@ public class HashTable<K, V> {
 
     public V get(K key) {
         int index = hash(key);
+        index = Math.abs(index);
         if (table[index] != null) {
             for (Entry<K, V> entry : table[index]) {
                 if (entry.getKey().equals(key)) {
@@ -69,6 +71,7 @@ public class HashTable<K, V> {
 
     public void remove(K key) {
         int index = hash(key);
+        index = Math.abs(index);
         if (table[index] != null) {
             for (Entry<K, V> entry : table[index]) {
                 if (entry.getKey().equals(key)) {
