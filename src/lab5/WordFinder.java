@@ -16,7 +16,7 @@ public class WordFinder {
     public static List<String> findWordsStartingWith(String text, char startingLetter) {
         List<String> result = new ArrayList<>();
         try {
-            String pattern = "\\b" + startingLetter + "\\w*\\b";
+            String pattern = "\\b" + startingLetter + "[a-zA-Z]*\\b";
             Pattern compiledPattern = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
             Matcher matcher = compiledPattern.matcher(text);
 
